@@ -1,4 +1,4 @@
-public class ChessPiece{
+public class ChessPiece extends ChessBoard{
     private int vPos;
     private int hPos;
     private String pieceColor;
@@ -42,6 +42,9 @@ public class ChessPiece{
         String piecePosition = (vPosChar + "" + vPos);
         return piecePosition;
     }
+    public int getPosition(int x, int y){
+        return (hPos + vPos);
+    }
     public void setColor(String color){
         pieceColor = color;
     }
@@ -60,25 +63,25 @@ public class ChessPiece{
             case 6:
             case 7:
             //pieceType = ("Pawn" + " " + (pieceNumber + 1) + "");
-            pieceType = ("Pawn");
+            pieceType = ("P");
             break;
             case 8:
             case 15:
-            pieceType = ("Rook");
+            pieceType = ("R");
             break;
             case 9:
             case 14:
-            pieceType = ("Knight");
+            pieceType = ("K");
             break;
             case 10:
             case 13:
-            pieceType = ("Bishop");
+            pieceType = ("B");
             break;
             case 11:
-            pieceType = ("King");
+            pieceType = ("O");
             break;
             case 12:
-            pieceType = ("Queen");
+            pieceType = ("Q");
             break;
         }
     }
@@ -87,7 +90,7 @@ public class ChessPiece{
     }
 
     public String printInfo(){
-        return "Placing " + getColor() + " " + getPieceNumber() + " at " + getPosition();
+        return /*"Placing " + getColor() + " " +*/ getPieceNumber() + " at " + getPosition();
     }
 }
 
